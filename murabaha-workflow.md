@@ -1,5 +1,6 @@
 # Murabaha Workflow
 
+{% code fullWidth="true" %}
 ```mermaid
 sequenceDiagram
     participant Client
@@ -20,5 +21,5 @@ sequenceDiagram
     Contract->>Contract: Verify Asset Ownership
     Contract->>Ledger: Record Immutable Debt
     Ledger-->>Client: Return Transaction Hash
-
 ```
+{% endcode %}
