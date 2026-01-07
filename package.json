@@ -1,0 +1,47 @@
+{
+  "name": "mizan-software-electron",
+  "version": "1.0.0",
+  "description": "Mizan Software Desktop App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently -k \"npm run site\" \"npm run electron\" \"npm run api\"",
+    "site": "cd frontend && npm run dev",
+    "api": "node server.js",
+    "electron": "wait-on tcp:5173 && electron .",
+    "build:frontend": "cd frontend && npm run build",
+    "build:win": "npm run build:frontend && npx electron-builder --win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "electron": "^29.0.0",
+    "electron-builder": "^24.13.3",
+    "wait-on": "^9.0.3"
+  },
+  "build": {
+    "appId": "com.mizan.financial",
+    "productName": "Mizan Enterprise",
+    "directories": {
+      "output": "dist"
+    },
+    "extraResources": [
+      {
+        "from": "backend/dist/api.exe",
+        "to": "backend/api.exe"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "^14.4.3",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "pdfkit": "^0.17.2",
+    "sqlite3": "^5.1.7"
+  }
+}

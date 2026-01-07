@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-charcoal: #1c1917;
+    --color-warm-gray: #fafaf9;
+    --color-accent-orange: #ea580c;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-warm-gray);
+    color: #333;
+}
+
+/* Enterprise Table Styles */
+.enterprise-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.875rem;
+}
+
+.enterprise-table th {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-align: left;
+}
+
+.enterprise-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #111827;
+}
+
+.enterprise-table tr:hover td {
+    background-color: #fff7ed;
+    /* Light orange tint on hover */
+}
+
+.enterprise-table tr:nth-child(even) {
+    background-color: #fafaf9;
+}

@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+target/
+dist/
+
+# Environment Variables (IMPORTANT: Hides your keys)
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Stellar/Soroban specific
+.soroban/
